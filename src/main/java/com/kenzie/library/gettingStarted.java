@@ -50,12 +50,42 @@ public class gettingStarted {
 				return contents.length;
 			}
 			
+			// Getter for nextPage
+			// Not sure if need to handle no next page
+			public int nextPage() {
+				
+				if (CurrentPageNumber+1 > contents.length-1) {
+					return -1;
+				}
+				else {
+					CurrentPageNumber = CurrentPageNumber + 1;
+					return CurrentPageNumber + 1;
+				}
+			}
+			
+			// Getter for prevPage
+			// Not sure if need to handle no next page
+			public int prevPage() {
+							
+				if (CurrentPageNumber <= 0) {
+					return -1;
+					}
+				else {
+					CurrentPageNumber = CurrentPageNumber - 1;
+					return CurrentPageNumber+1;
+					}
+			}
+			
 		}
 		
 		String [] myContents = { "I", "Love", "Reading" };
 		Book myBook = new Book("Sorcerer's Stone","J.K. Rowling","SciFi", myContents);
-		System.out.println(myBook.getCurrentPageNumber());
-		
+		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.nextPage());
+		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.nextPage());
+		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.nextPage());
+		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.prevPage());
+		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.prevPage());
+		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.prevPage());
 		
 		
 	}
