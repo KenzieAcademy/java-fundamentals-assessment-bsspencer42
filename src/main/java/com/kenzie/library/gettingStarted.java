@@ -12,6 +12,7 @@ public class gettingStarted {
 			private String author;
 			private String genre;
 			private String [] contents;
+			private int CurrentPageNumber;
 			
 			// Constructor declaration of class
 			public Book(String title, String author, String genre, String [] contents)
@@ -20,6 +21,7 @@ public class gettingStarted {
 				this.author = author;
 				this.genre = genre;
 				this.contents = contents;
+				this.CurrentPageNumber = 0;
 			}
 			
 			// Getter for title
@@ -38,8 +40,13 @@ public class gettingStarted {
 				return genre;
 			}
 			
-			// Getter for FirstPage
-			public getNumPages() {
+			// Getter for CurrentPageNumber
+			public int getCurrentPageNumber() {
+				return CurrentPageNumber + 1;
+			}
+			
+			// Getter for NumPages
+			public int getNumPages() {
 				return contents.length;
 			}
 			
@@ -47,7 +54,7 @@ public class gettingStarted {
 		
 		String [] myContents = { "I", "Love", "Reading" };
 		Book myBook = new Book("Sorcerer's Stone","J.K. Rowling","SciFi", myContents);
-		System.out.println(myContents		.getNumPages());
+		System.out.println(myBook.getCurrentPageNumber());
 		
 		
 		
