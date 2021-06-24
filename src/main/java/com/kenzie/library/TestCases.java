@@ -25,7 +25,6 @@ public class TestCases {
 		for (int i = 0; i < myContents.length; i++) {
 			test.add(myContents[i]);
 		}
-		System.out.println(test.get(1));
 	}
 
 }
