@@ -47,27 +47,27 @@ public class Book {
 	
 	// Getter for nextPage
 	// Not sure if need to handle no next page
-	public int nextPage() {
+	public String nextPage() {
 		
 		if (CurrentPageNumber+1 > contents.length-1) {
-			return -1;
+			return null;
 		}
 		else {
 			CurrentPageNumber = CurrentPageNumber + 1;
-			return CurrentPageNumber + 1;
+			return contents[CurrentPageNumber];
 		}
 	}
 	
 	// Getter for prevPage
 	// Not sure if need to handle no next page
-	public int prevPage() {
+	public String prevPage() {
 					
 		if (CurrentPageNumber <= 0) {
-			return -1;
+			return null;
 			}
 		else {
 			CurrentPageNumber = CurrentPageNumber - 1;
-			return CurrentPageNumber+1;
+			return contents[CurrentPageNumber];
 			}
 	}
 				
