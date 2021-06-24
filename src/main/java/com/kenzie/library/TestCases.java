@@ -1,5 +1,7 @@
 package com.kenzie.library;
 
+import java.util.LinkedList;
+
 public class TestCases {
 
 	public static void main(String[] args) {
@@ -18,7 +20,12 @@ public class TestCases {
 		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.prevPage());
 		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.prevPage());
 		System.out.println("Current page: " + myBook.getCurrentPageNumber() + " Next page:" + myBook.prevPage());
-
+		
+		LinkedList<String> test = new LinkedList<>();
+		for (int i = 0; i < myContents.length; i++) {
+			test.add(myContents[i]);
+		}
+		System.out.println(test.get(1));
 	}
 
 }
