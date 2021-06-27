@@ -1,4 +1,6 @@
 package com.kenzie.library;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Book {
 	
@@ -6,16 +8,21 @@ public class Book {
 	private String title;
 	private String author;
 	private String genre;
-	private String [] contents;
+	private ArrayList<String> contents;
 	private int CurrentPageNumber;
 	
 	// Constructor declaration of class
-	public Book(String title, String author, String genre, String [] contents)
+	public Book(String title, String author, String genre, String[] contents)
 	{
+		//Create ArrayList from string list argument
+		ArrayList<String> myList = new ArrayList<>();
+		Collections.addAll(myList,contents);
+		
+		// Assign instance variable initial values
 		this.title = title;
 		this.author = author;
 		this.genre = genre;
-		this.contents = contents;
+		this.contents = myList;
 		this.CurrentPageNumber = 0;
 	}
 	
@@ -40,11 +47,17 @@ public class Book {
 		return CurrentPageNumber + 1;
 	}
 	
+	
 	// Getter for NumPages
 	public int getNumPages() {
-		return contents.length;
+		return contents.size();
 	}
 	
+	public String openPage(int pageNumber) {
+		return contents.get(pageNumber-1);
+	}
+	
+	/*
 	// Getter for nextPage
 	// Not sure if need to handle no next page
 	public String nextPage() {
@@ -70,5 +83,6 @@ public class Book {
 			return contents[CurrentPageNumber];
 			}
 	}
+	*/
 				
 }
