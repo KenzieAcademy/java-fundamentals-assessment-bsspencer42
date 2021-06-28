@@ -7,12 +7,12 @@ public class Book {
 	// Instance variables
 	private String title;
 	private String author;
-	private String genre;
+	private Genre genre;
 	private ArrayList<String> contents;
 	private int CurrentPageNumber;
 	
 	// Constructor declaration of class
-	public Book(String title, String author, String genre, String[] contents)
+	public Book(String title, String author, Genre genre, String[] contents)
 	{
 		//Create ArrayList from string list argument
 		ArrayList<String> myList = new ArrayList<>();
@@ -25,7 +25,7 @@ public class Book {
 		this.contents = myList;
 		this.CurrentPageNumber = 0;
 	}
-	
+
 		// Getter for CurrentPageNumber
 		public int getCurrentPageNumber() {
 			return CurrentPageNumber + 1;
@@ -108,7 +108,7 @@ public class Book {
 		
 		// Getter for genre
 		// This is somehow linked to library *return later*
-		public String getGenre() {
+		public Genre getGenre() {
 			return genre;
 		}
 			

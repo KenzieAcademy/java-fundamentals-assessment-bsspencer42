@@ -7,7 +7,7 @@ public class TestCases {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String [] myContents = { "This is page one.", "Love", "Reading" };
-		Book myBook = new Book("Sorcerer's Stone","J.K. Rowling","SciFi", myContents);
+		Book myBook = new Book("Sorcerer's Stone","J.K. Rowling",Genre.SCIENCE_FICTION, myContents);
 		
 		// Test case for private variable
 		//System.out.println(myBook.getNumPages());
@@ -18,6 +18,8 @@ public class TestCases {
 		System.out.println(myBook.openPage(2));
 		//System.out.println(myBook.nextPage());
 		System.out.println(myBook.getPercentageComplete());
+		
+		System.out.println(myBook.getGenre());
 		
 		// Test script for next/prev page
 		
