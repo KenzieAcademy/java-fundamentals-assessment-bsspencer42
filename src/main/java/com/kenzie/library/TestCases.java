@@ -11,7 +11,13 @@ public class TestCases {
 		
 		// Test case for private variable
 		//System.out.println(myBook.getNumPages());
-		System.out.println(myBook.openPage(1));
+		System.out.println(myBook.openPage(3));
+		//System.out.println(myBook.getNumPages());
+		//System.out.println(myBook.tearOutCurrentPage());
+		System.out.println(myBook.getCurrentPageNumber());
+		System.out.println(myBook.openPage(2));
+		//System.out.println(myBook.nextPage());
+		System.out.println(myBook.getPercentageComplete());
 		
 		// Test script for next/prev page
 		

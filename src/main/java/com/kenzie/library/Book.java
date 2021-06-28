@@ -26,63 +26,90 @@ public class Book {
 		this.CurrentPageNumber = 0;
 	}
 	
-	// Getter for title
-	public String getTitle() {
-		return title;
-	}
-	
-	// Getter for author
-	public String getAuthor() {
-		return author;
-	}
-	
-	// Getter for genre
-	// This is somehow linked to library *return later*
-	public String getGenre() {
-		return genre;
-	}
-	
-	// Getter for CurrentPageNumber
-	public int getCurrentPageNumber() {
-		return CurrentPageNumber + 1;
-	}
-	
-	
-	// Getter for NumPages
-	public int getNumPages() {
-		return contents.size();
-	}
-	
-	public String openPage(int pageNumber) {
-		return contents.get(pageNumber-1);
-	}
-	
-	/*
-	// Getter for nextPage
-	// Not sure if need to handle no next page
-	public String nextPage() {
+		// Getter for CurrentPageNumber
+		public int getCurrentPageNumber() {
+			return CurrentPageNumber + 1;
+		}
 		
-		if (CurrentPageNumber+1 > contents.length-1) {
-			return null;
+		// Getter for nextPage
+		public String nextPage() {
+			
+			if (CurrentPageNumber+1 > contents.size()-1) {
+				return null;
+			}
+			else {
+				CurrentPageNumber = CurrentPageNumber + 1;
+				return contents.get(CurrentPageNumber);
+			}
 		}
-		else {
-			CurrentPageNumber = CurrentPageNumber + 1;
-			return contents[CurrentPageNumber];
+		
+		// Getter for prevPage
+		public String prevPage() {
+						
+			if (CurrentPageNumber <= 0) {
+				return null;
+				}
+			else {
+				CurrentPageNumber = CurrentPageNumber - 1;
+				return contents.get(CurrentPageNumber);
+				}
 		}
-	}
 	
-	// Getter for prevPage
-	// Not sure if need to handle no next page
-	public String prevPage() {
-					
-		if (CurrentPageNumber <= 0) {
-			return null;
+		// Method to return contents of specific page
+		public String openPage(int pageNumber) {
+			// Save current page number to the opened page
+			CurrentPageNumber = pageNumber - 1;
+			return contents.get(pageNumber-1);
+		}
+		
+		// Method to remove specific page
+		public String tearOutCurrentPage() {
+			
+			// Local variable to hold removed page contents before removing
+			String removedPageContents = contents.get(CurrentPageNumber);
+			// This is why I cast the original string into an ArrayList. Makes life easier.
+			contents.remove(CurrentPageNumber);
+			
+			// Handles exception case where last page is page removed (resets pointer to previous page)
+			if (CurrentPageNumber > contents.size() -1) {
+				CurrentPageNumber--;
 			}
-		else {
-			CurrentPageNumber = CurrentPageNumber - 1;
-			return contents[CurrentPageNumber];
-			}
-	}
-	*/
-				
+			// Return removed page contents
+			return removedPageContents;
+		}
+		
+		// Getter for NumPages
+		public int getNumPages() {
+			return contents.size();
+		}
+		
+		// Method for percent complete
+		public int getPercentageComplete() {
+			
+			// Local variables of type double for current page and total pages
+			double localPageNum = (double) CurrentPageNumber + 1.0;
+			double localTotalPages = (double) contents.size();
+			
+			// Calculate percent complete and cast to int
+			int percentComplete = (int) Math.round(localPageNum / localTotalPages * 100);
+			
+			return percentComplete;
+		}
+		
+		// Getter for title
+		public String getTitle() {
+			return title;
+		}
+		
+		// Getter for author
+		public String getAuthor() {
+			return author;
+		}
+		
+		// Getter for genre
+		// This is somehow linked to library *return later*
+		public String getGenre() {
+			return genre;
+		}
+			
 }
