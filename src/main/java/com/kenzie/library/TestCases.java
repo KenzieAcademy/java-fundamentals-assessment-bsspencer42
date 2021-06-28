@@ -21,6 +21,10 @@ public class TestCases {
 		
 		System.out.println(myBook.getGenre());
 		
+		Library myLibrary = new Library();
+		myLibrary.addBook(myBook);
+		
+		
 		// Test script for next/prev page
 		
 		/*
