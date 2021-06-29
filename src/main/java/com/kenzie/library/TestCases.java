@@ -20,6 +20,7 @@ public class TestCases {
 		myLibrary.addBook(myBook2);
 		myLibrary.addBook(myBook3);
 		Book mybook = myLibrary.checkoutBook("Sorcerer's Stone");
+		Book mybook2 = myLibrary.checkoutBook("Prisoner of Azkaban");
 		//myBook2.tearOutCurrentPage();
 		//Book myBook3 = myLibrary.checkoutBook("Sorcerer's Stone");
 		for (String book : myLibrary.listBooks()) {
@@ -32,7 +33,11 @@ public class TestCases {
 			System.out.println(book);
 		}
 		
+		System.out.println("\n");
 		
+		for (String book : myLibrary.listAvailableBooks()) {
+			System.out.println(book);
+		}
 		
 		
 		// Test script for next/prev page
