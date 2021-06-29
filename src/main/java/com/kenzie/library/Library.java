@@ -47,7 +47,7 @@ public class Library {
 		return genreOnlyList;
 	}
 	
-	
+	// List available books
 	public String[] listAvailableBooks() {
 		// New local arrayList
 		ArrayList<String> availableBooksArrList = new ArrayList<>();
@@ -65,6 +65,33 @@ public class Library {
 		return availableBooks;
 	}
 	
+	// List available books of specific genre
+	public String[] listAvailableBooks(Genre genre) {
+		// New local arrayList
+		ArrayList<String> availableBooksArrList = new ArrayList<>();
+		// Add if the book not in the checked out book list
+		for (int i = 0; i < myLibrary.size();i++) {
+			if (myLibrary.get(i).getGenre() == genre && !checkedOut.contains(myLibrary.get(i).getTitle())) {
+				availableBooksArrList.add(myLibrary.get(i).getTitle());
+			}
+		}
+		// Cast arrayList to String list
+		String[] availableBooks = new String[availableBooksArrList.size()];
+		for (int x = 0; x <availableBooksArrList.size();x++) {
+			availableBooks[x] = availableBooksArrList.get(x);
+		}
+		return availableBooks;
+	}
+	
+	// Check to see if book exists in library
+	public boolean hasBook(String checkTitle) {
+		for (int i = 0; i < myLibrary.size();i++) {
+			if (myLibrary.get(i).getTitle() == checkTitle) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	// Checkout book
 	public Book checkoutBook(String checkoutTitle) {
@@ -88,5 +115,8 @@ public class Library {
 			// If book not found, throw not found exception
 			throw new BookNotFoundException(checkoutTitle);
 	}
+	
+	// Return book
+	
 	
 }

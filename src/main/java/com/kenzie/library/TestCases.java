@@ -19,7 +19,7 @@ public class TestCases {
 		myLibrary.addBook(myBook);
 		myLibrary.addBook(myBook2);
 		myLibrary.addBook(myBook3);
-		Book mybook = myLibrary.checkoutBook("Sorcerer's Stone");
+		//Book mybook = myLibrary.checkoutBook("Sorcerer's Stone");
 		Book mybook2 = myLibrary.checkoutBook("Prisoner of Azkaban");
 		//myBook2.tearOutCurrentPage();
 		//Book myBook3 = myLibrary.checkoutBook("Sorcerer's Stone");
@@ -38,7 +38,13 @@ public class TestCases {
 		for (String book : myLibrary.listAvailableBooks()) {
 			System.out.println(book);
 		}
+		System.out.println("Test");
+		for (String book : myLibrary.listAvailableBooks(Genre.SCIENCE_FICTION)) {
+			System.out.println(book);
+		}
 		
+		System.out.println(myLibrary.hasBook("Poop"));
+		System.out.println(myLibrary.hasBook("Sorcerer's Stone"));
 		
 		// Test script for next/prev page
 		
