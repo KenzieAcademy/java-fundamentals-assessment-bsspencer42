@@ -1,5 +1,6 @@
 package com.kenzie.library;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Library {
 	
@@ -30,7 +31,20 @@ public class Library {
 	}
 	
 	
-	
+	public String[] listBooks(Genre genre) {
+		// New local arrayList
+		ArrayList<String> genreOnly = new ArrayList<>();
+		for (int i = 0; i < myLibrary.size();i++) {
+			if (myLibrary.get(i).getGenre() == genre) {
+				genreOnly.add(myLibrary.get(i).getTitle());
+			}
+		}
+		String[] genreOnlyList = new String[genreOnly.size()];
+		for (int x = 0; x <genreOnly.size();x++) {
+			genreOnlyList[x] = genreOnly.get(x);
+		}
+		return genreOnlyList;
+	}
 	
 	
 	// Checkout book
