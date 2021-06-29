@@ -12,12 +12,12 @@ public class Library {
 	public Library() {
 		this.myLibrary = new ArrayList<Book>();
 		this.checkedOut = new ArrayList<String>();
-		
 	}
 	
 	// Add book method
 	public void addBook(Book newBook) {
 		myLibrary.add(newBook);
+		Collections.sort(myLibrary);
 	}
 	
 	// List all books

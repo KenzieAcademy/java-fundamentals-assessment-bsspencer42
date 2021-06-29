@@ -2,7 +2,7 @@ package com.kenzie.library;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Book {
+public class Book implements Comparable<Book> {
 	
 	// Instance variables
 	private String title;
@@ -24,6 +24,12 @@ public class Book {
 		this.genre = genre;
 		this.contents = myList;
 		this.CurrentPageNumber = 0;
+	}
+
+	// Override for comparison
+	public int compareTo(Book book) {
+		int compBook = this.title.compareTo(book.title);
+		return compBook;
 	}
 
 		// Getter for CurrentPageNumber
