@@ -34,7 +34,7 @@ public class Book implements Comparable<Book> {
 
 		// Getter for CurrentPageNumber
 		public int getCurrentPageNumber() {
-			return CurrentPageNumber + 1;
+			return CurrentPageNumber;
 		}
 		
 		// Getter for nextPage
@@ -64,8 +64,8 @@ public class Book implements Comparable<Book> {
 		// Method to return contents of specific page
 		public String openPage(int pageNumber) {
 			// Save current page number to the opened page
-			CurrentPageNumber = pageNumber - 1;
-			return contents.get(pageNumber-1);
+			CurrentPageNumber = pageNumber;
+			return contents.get(pageNumber);
 		}
 		
 		// Method to remove specific page
@@ -90,11 +90,11 @@ public class Book implements Comparable<Book> {
 		}
 		
 		// Method for percent complete
-		public int getPercentageComplete() {
+		public int getPercentComplete() {
 			
 			// Local variables of type double for current page and total pages
-			double localPageNum = (double) CurrentPageNumber + 1.0;
-			double localTotalPages = (double) contents.size();
+			double localPageNum = (double) CurrentPageNumber;
+			double localTotalPages = (double) contents.size()-1.0;
 			
 			// Calculate percent complete and cast to int
 			int percentComplete = (int) Math.round(localPageNum / localTotalPages * 100);

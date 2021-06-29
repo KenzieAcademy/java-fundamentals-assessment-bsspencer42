@@ -117,6 +117,14 @@ public class Library {
 	}
 	
 	// Return book
-	
+	public void returnBook(Book book) {
+		String bookTitle = book.getTitle();
+		if (checkedOut.contains(bookTitle)) {
+			checkedOut.remove(bookTitle);
+		}
+		else{
+			System.out.println("Book not in checked out list.");
+		}
+	}
 	
 }
