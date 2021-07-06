@@ -2,6 +2,7 @@ package com.kenzie.library;
 import java.util.ArrayList;
 import java.util.Collections;
 
+// Create book class with override for compareTo method to specify how objects are sorted
 public class Book implements Comparable<Book> {
 	
 	// Instance variables
