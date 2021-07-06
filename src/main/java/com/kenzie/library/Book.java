@@ -27,10 +27,9 @@ public class Book implements Comparable<Book> {
 		this.CurrentPageNumber = 0;
 	}
 
-	// Override for comparison
+	// Override for compareTo method - Sort by title
 	public int compareTo(Book book) {
-		int compBook = this.title.compareTo(book.title);
-		return compBook;
+		return this.title.compareTo(book.title);
 	}
 
 		// Getter for CurrentPageNumber
@@ -94,13 +93,11 @@ public class Book implements Comparable<Book> {
 		public int getPercentComplete() {
 			
 			// Local variables of type double for current page and total pages
-			double localPageNum = (double) CurrentPageNumber;
+			double localPageNum = CurrentPageNumber;
 			double localTotalPages = (double) contents.size()-1.0;
 			
 			// Calculate percent complete and cast to int
-			int percentComplete = (int) Math.round(localPageNum / localTotalPages * 100);
-			
-			return percentComplete;
+			return (int) Math.round(localPageNum / localTotalPages * 100);
 		}
 		
 		// Getter for title
